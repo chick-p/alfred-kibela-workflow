@@ -4,6 +4,8 @@
 
 ## Install
 
+Install this package as a global, or import [kibela-search.alfredworkflow](https://github.com/chick-p/alfred-kibela-workflow/releases)
+
 ```bash
 $ npm install --global git+https://github.com/chick-p/alfred-kibela-workflow.git
 ```
