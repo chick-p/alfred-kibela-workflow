@@ -2,6 +2,7 @@
   "extends": [
     "config:base"
   ],
+  "labels": ["renovate"],
   "schedule": ["after 9am on saturday"],
   "rangeStrategy": "bump"
 }
