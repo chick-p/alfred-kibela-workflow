@@ -1,12 +1,5 @@
-const path = require("path");
-
 module.exports = {
-  plugins: ["prettier"],
-  extends: [
-    "eslint:recommended",
-    "plugin:node/recommended",
-    "plugin:prettier/recommended",
-  ],
+  extends: ["eslint:recommended", "plugin:node/recommended", "prettier"],
   parserOptions: {
     sourceType: "module",
     ecmaVersion: 2020,

@@ -7,11 +7,12 @@
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup",
     "fix": "run-p -l fix:*",
-    "fix:lint": "npm run lint:lint -- --fix",
+    "fix:lint": "npm run lint:eslint -- --fix && npm run lint:prettier -- --write",
     "fix:md": "prettier --write README.md",
     "lint": "run-p -l lint:*",
     "lint:md": "prettier --check README.md",
-    "lint:eslint": "eslint 'src/**/*.js'"
+    "lint:eslint": "eslint --ext js src/",
+    "lint:prettier": "prettier src/ --check"
   },
   "engines": {
     "node": ">=v14.16.1"
