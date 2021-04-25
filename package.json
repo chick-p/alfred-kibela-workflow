@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/chick-p/alfred-kibela-workflow#readme",
   "devDependencies": {
-    "eslint": "^7.24.0",
+    "eslint": "^7.25.0",
     "eslint-config-prettier": "^8.2.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
