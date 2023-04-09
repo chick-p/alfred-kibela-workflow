@@ -1,6 +1,7 @@
-const alfy = require("alfy");
-const gql = require("graphql-tag");
-const printer = require("graphql/language/printer");
+import alfy from "alfy";
+import gql from "graphql-tag";
+import { graphql } from "graphql";
+const printer = graphql.language.printer;
 
 // main
 const teamName = process.env.KIBELA_TEAM_NAME || "";
