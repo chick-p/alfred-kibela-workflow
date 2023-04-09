@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "postinstall": "alfy-init",
     "preuninstall": "alfy-cleanup",
@@ -36,7 +37,7 @@
     "prettier": "^2.7.1"
   },
   "dependencies": {
-    "alfy": "^0.12.0",
+    "alfy": "^1.1.0",
     "graphql": "^15.8.0",
     "graphql-tag": "^2.12.6"
   }
