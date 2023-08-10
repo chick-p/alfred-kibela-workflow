@@ -1,29 +1,25 @@
-name: lint
+name: Run ESLint
+
 on:
-  push:
-    branches: [ master ]
   pull_request:
+
 jobs:
-  build:
-    name: Node.js ubuntu-latest
+  lint:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '12.x'
-    - name: Cache Node.js modules
-      uses: actions/cache@v3
-      with:
-        path: ~/.npm
-        key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.OS }}-node-
-          ${{ runner.OS }}-
-    - name: npm install, and npm run lint
-      run: npm install
-    - name: npm run lint
-      run: npm run lint
-      env:
-        CI: true
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version-file: ./.node-version
+          cache: "npm"
+
+      - name: npm ci
+        run: |
+          npm ci
+        env:
+          CI: true
+
+      - name: npm run lint
+        run: |
+          npm run lint
