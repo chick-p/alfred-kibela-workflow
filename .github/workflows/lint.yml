@@ -14,6 +14,18 @@ jobs:
           node-version-file: ./.node-version
           cache: "npm"
 
+      - name: prepare plist
+        run: |
+          mkdir -p "/home/runner/Library/Application Support/Alfred/"
+          mkdir -p "/home/runner/Documents/alfred/Alfred.alfredpreferences/"
+          mkdir -p "/home/runner/Library/Application Support/Alfred 3/Alfred.alfredpreferences/"
+          mkdir -p /home/runner/Library/Preferences/
+
+          wget -nv https://raw.githubusercontent.com/SamVerschueren/resolve-alfred-prefs/2072c5b9c33a2592408d0cec8a89dc9ce41035ad/test/fixtures/com.runningwithcrayons.Alfred-Preferences-3.plist
+
+          echo "{current:\"\"}" > "/home/runner/Library/Application Support/Alfred/prefs.json"
+          mv ./com.runningwithcrayons.Alfred-Preferences-3.plist /home/runner/Library/Preferences/
+
       - name: npm ci
         run: |
           npm ci
